@@ -3,6 +3,8 @@ spring:
     name: default-service
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
+    username: ${vault:spring.datasource.username} 
+    password: ${vault:spring.datasource.password}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
